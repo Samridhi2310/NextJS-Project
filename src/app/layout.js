@@ -1,6 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { FaFacebook } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +33,17 @@ export default function RootLayout({ children }) {
             </ul>
           </div>
         {children}
+        <div className="bg-zinc-300 md:p-8 flex justify-between items-center">
+          <img src="logo.png" alt="Logo" className="h-12 w-12 "/>
+          <h1 className="text-3xl">Common Layout of Footer</h1>
+          <div className="flex flex-row gap-2">
+          <FaFacebook />
+          <FaYoutube/>
+          <FaInstagram/>
+          </div>
+
+
+        </div>
       </body>
     </html>
   );
