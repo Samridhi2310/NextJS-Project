@@ -1,13 +1,14 @@
-import React from "react";
+export default async function ViewDetail({ params }) {
+  const { id } = params; // ✅ Correctly extracts the dynamic id
 
-export default function content({ params }) {
-  const ResolvePromise=React.use(params);
-  console.log("Params:", params); // Debugging
+  const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  const post = await response.json();
 
   return (
     <div>
-      <h1>Hello from dynamic routing</h1>
-      <p>Dynamic content: {ResolvePromise.blog}</p>
+      <h1>{post.id}</h1>
+      <h2>{post.title}</h2>
+      <p>{post.body}</p>
     </div>
   );
 }

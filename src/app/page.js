@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {useRouter} from "next/navigation"
+import Show from "./Show";
 
 export default function Home() {
   const route=useRouter();
@@ -18,7 +19,9 @@ export default function Home() {
         <Link href="/about/hello">Hello</Link>
         
         <button onClick={()=>navigation('/about/aboutData')}>Nested Static about</button>
-
+  
+        <Show/>
+        
         
         
         
